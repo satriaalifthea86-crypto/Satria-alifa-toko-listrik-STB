@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Satria Teknik Bandung (STB) | Perlengkapan Listrik & Panel</title>
+<style>
+/* Skema warna dengan Header Merah khas STB & Shopee */
+:root{
+  --merah:#EE4D2D;     /* Merah cerah khas STB/Shopee untuk bagian atas */
+  --navy:#0F172A;      /* Biru Navy untuk teks utama/tombol sekunder */
+  --biru:#2563EB;      /* Biru untuk harga produk */
+  --bg:#FFFFFF;        /* Latar belakang putih bersih */
+  --garis:#E2E8F0;     /* Garis pembatas rapi */
+  --teks:#1E293B;      /* Warna teks utama */
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--teks);line-height:1.6}
+a{color:var(--biru);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Bagian Atas / Header Merah */
+.bar{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;padding:.8rem 5%;background:var(--merah);box-shadow:0 2px 4px rgba(0,0,0,0.1)}
+.logo{display:flex;align-items:center;gap:.8rem;font-weight:700;color:#fff;font-size:1.1rem}
+.logo img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid #fff}
+
+nav{display:flex;gap:1.2rem;flex-wrap:wrap}
+nav a{color:#FFFFFF;font-weight:600;font-size:.95rem}
+nav a:hover{opacity:.8}
+.kr span{background:#FFFFFF;color:var(--merah);border-radius:99px;padding:0 .5rem;font-size:.8rem;font-weight:700}
+
+section{max-width:1000px;margin:0 auto;padding:3rem 5%}
+.hero{padding-top:3.5rem;padding-bottom:3.5rem}
+h1{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.2;margin:.5rem 0 1rem;color:var(--navy)}
+h2{font-size:1.5rem;margin:0 0 1.2rem;border-bottom:3px solid var(--merah);display:inline-block;padding-bottom:.2rem;color:var(--navy)}
+
+.ident{display:inline-block;background:#FEF2F2;color:#991B1B;padding:.4rem .9rem;border-radius:6px;margin:0;font-size:.9rem;border-left:4px solid var(--merah)}
+.lead{font-size:1.05rem;max-width:55ch;color:#475569}
+
+button,.tombol{font:inherit;font-weight:600;background:var(--merah);color:#fff;border:0;padding:.6rem 1.2rem;border-radius:6px;cursor:pointer;display:inline-block}
+button:hover,.tombol:hover{filter:brightness(.9)}
+.sekunder{background:transparent;border:2px solid var(--navy);color:var(--navy)}
+.sekunder:hover{background:var(--navy);color:#fff}
+
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--merah);outline-offset:2px}
+
+.alat{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;margin-bottom:1.5rem}
+input,select{font:inherit;padding:.5rem .8rem;border:1px solid var(--garis);border-radius:6px;background:#F8FAFC}
+input{min-width:220px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.2rem}
+.kartu{background:#FFFFFF;border:1px solid var(--garis);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
+.kartu img{width:100%;height:190px;object-fit:cover;background:#F1F5F9;display:block}
+.kartu div{padding:1rem;display:flex;flex-direction:column;gap:.4rem;flex:1}
+.kartu h3{margin:0;font-size:1rem;color:var(--navy)}
+.hrg{font-weight:700;color:var(--biru)}
+.kartu button{margin-top:auto}
+
+.gulir{overflow-x:auto;background:#FFFFFF;border-radius:8px;border:1px solid var(--garis)}
+table{width:100%;border-collapse:collapse}
+caption{text-align:left;padding:.6rem 1rem;font-weight:600;color:#64748B;font-size:.9rem}
+th,td{padding:.75rem 1rem;text-align:left;border-bottom:1px solid var(--garis)}
+thead th{background:var(--navy);color:#fff;font-weight:600}
+tbody tr:hover{background:#F8FAFC}
+#isi button{padding:.2rem .5rem;margin-left:.4rem;font-size:.8rem;background:var(--merah)}
+
+.sosial{display:flex;gap:1.5rem;flex-wrap:wrap;font-weight:600}
+footer{text-align:center;padding:2rem 5%;background:var(--navy);color:#94A3B8;font-size:.9rem}
+footer a{color:var(--merah)}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <a class="logo" href="#beranda">
+    <img src="logo.jpg" alt="Logo STB" onerror="if(this.src.includes('logo.jpg')){this.src='logo.png';}else{this.src='logo.jpeg';}">
+    Satria Teknik Bandung
+  </a>
+  <nav aria-label="Menu utama">
+    <a href="#produk">Produk</a>
+    <a href="#harga">Daftar Harga</a>
+    <a href="#kontak">Kontak</a>
+    <a href="#keranjang" class="kr">Keranjang <span id="jumlah">0</span></a>
+  </nav>
+</header>
+
+<main>
+<section id="beranda" class="hero">
+  <!-- Identitas mahasiswa wajib tercantum sesuai ketentuan tugas -->
+  <p class="ident">Nama: <strong>Satria</strong> | NPM: <strong>251111007</strong> | Universitas Widyatama</p>
+  <h1>Pusat Perlengkapan Listrik, Kabel, & Panel Berkualitas.</h1>
+  <p class="lead">Menyediakan kabel Supreme, Extrana, Surge Protector RS-485, Box Panel, hingga lampu LED bergaransi SNI langsung dari toko.</p>
+  <br>
+  <a class="tombol" href="#produk">Lihat Katalog Produk</a>
+</section>
+
+<section id="produk">
+  <h2>Katalog Produk</h2>
+  <div class="alat">
+    <label for="cari">Cari:</label>
+    <input id="cari" type="search" placeholder="Contoh: kabel, lampu...">
+    <label for="kat">Kategori:</label>
+    <select id="kat">
+      <option value="semua">Semua</option>
+      <option>Kabel</option>
+      <option>Protektor</option>
+      <option>Panel</option>
+      <option>Lampu</option>
+    </select>
+  </div>
+  <div id="daftar" class="grid"></div>
+  <p id="kosong" hidden>Produk tidak ditemukan.</p>
+</section>
+
+<section id="harga">
+  <h2>Daftar Harga</h2>
+  <div class="gulir">
+  <table>
+    <caption>Tabel Harga Satuan dan Grosir - Satria Teknik Bandung (STB)</caption>
+    <thead><tr><th scope="col">Produk</th><th scope="col">Kategori</th><th scope="col">Satuan</th><th scope="col">Harga</th></tr></thead>
+    <tbody>
+      <tr><td>Kabel Supreme NYM 3x2.5 mm (50m)</td><td>Kabel</td><td>roll</td><td>Rp 1.400.000</td></tr>
+      <tr><td>Kabel Supreme NYMHY Hitam 3x2.5 mm (100m)</td><td>Kabel</td><td>roll</td><td>Rp 1.650.000</td></tr>
+      <tr><td>Kabel Extrana NYM 3x1.5 mm (50m)</td><td>Kabel</td><td>roll</td><td>Rp 280.000</td></tr>
+      <tr><td>Kabel Supreme NYMHY Putih 3x1.5 mm (100m)</td><td>Kabel</td><td>roll</td><td>Rp 1.345.000</td></tr>
+      <tr><td>RS-485 Surge Protector (SPD-T485-105)</td><td>Protektor</td><td>pcs</td><td>Rp 600.000</td></tr>
+      <tr><td>Box Panel Listrik 1 PK</td><td>Panel</td><td>unit</td><td>Rp 350.000</td></tr>
+      <tr><td>Lampu LED Philips 12 Watt (Beli 3 Gratis 1)</td><td>Lampu</td><td>paket</td><td>Rp 120.000</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section id="keranjang">
+  <h2>Keranjang Belanja</h2>
+  <ul id="isi" style="list-style:none; padding:0; margin-bottom:1rem;"></ul>
+  <p>Total Pembayaran: <strong id="total" style="color:var(--merah);">Rp 0</strong></p>
+  <a id="pesan" class="tombol" href="#keranjang" target="_blank" rel="noopener">Pesan lewat WhatsApp</a>
+  <button id="kosongkan" type="button" class="sekunder" style="margin-left: .5rem;">Kosongkan</button>
+  <p id="info" role="status" style="margin-top:.5rem; font-size:.9rem; color:#475569;"></p>
+</section>
+
+<section id="kontak">
+  <h2>Kontak & Lokasi Toko</h2>
+  <p>Jam Operasional: Senin - Sabtu, 08.00 - 17.00 WIB.<br>Alamat: Dayeuhkolot, Bandung, Jawa Barat.</p>
+  <p class="sosial">
+    <a href="https://wa.me/6281234567890" target="_blank" rel="noopener">WhatsApp Toko</a>
+    <a href="https://shopee.co.id/satriasatria92" target="_blank" rel="noopener">Toko Shopee (STB)</a>
+    <a href="https://www.tokopedia.com/" target="_blank" rel="noopener">Tokopedia</a>
+  </p>
+</section>
+</main>
+
+<footer>
+  <p>&copy; 2026 Satria Teknik Bandung (STB) | Dibuat oleh Satria Alifa Adrias (NPM: 251111007)</p>
+  <p><a href="#beranda">Kembali ke atas &uarr;</a></p>
+</footer>
+
+<script>
+var NOMOR_WA = "6281234567890"; // Ganti dengan nomor WhatsApp Anda
+
+var produk = [
+  { id: 1, nama: "Kabel Supreme NYM 3x2.5 mm (50m)", kat: "Kabel", harga: 1400000, gambar: "kabel1.jpg", ext: "kabel1.png" },
+  { id: 2, nama: "Kabel Supreme NYMHY Hitam 3x2.5 mm (100m)", kat: "Kabel", harga: 1650000, gambar: "3.jpg", ext: "3.png" },
+  { id: 3, nama: "Kabel Extrana NYM 3x1.5 mm (50m)", kat: "Kabel", harga: 280000, gambar: "kabel2.jpg", ext: "kabel2.png" },
+  { id: 4, nama: "Kabel Supreme NYMHY Putih 3x1.5 mm (100m)", kat: "Kabel", harga: 1345000, gambar: "kabel3.jpg", ext: "kabel3.png" },
+  { id: 5, nama: "RS-485 Surge Protector (SPD-T485-105)", kat: "Protektor", harga: 600000, gambar: "spd.jpg", ext: "spd.png" },
+  { id: 6, nama: "Box Panel Listrik 1 PK", kat: "Panel", harga: 350000, gambar: "panel.jpg", ext: "panel.png" },
+  { id: 7, nama: "Lampu LED Philips 12 Watt (Beli 3 Gratis 1)", kat: "Lampu", harga: 120000, gambar: "lampu.jpg", ext: "lampu.png" }
+];
+
+var keranjang = {};
+
+function rp(n) { return "Rp " + n.toLocaleString("id-ID"); }
+function cari(id) { return produk.filter(function (p) { return p.id === id; })[0]; }
+
+function tampilkan() {
+  var q = document.getElementById("cari").value.toLowerCase().trim();
+  var k = document.getElementById("kat").value;
+  var hasil = produk.filter(function (p) {
+    return (k === "semua" || p.kat === k) && p.nama.toLowerCase().indexOf(q) !== -1;
+  });
+  var wadah = document.getElementById("daftar");
+  wadah.innerHTML = "";
+  hasil.forEach(function (p) {
+    var el = document.createElement("article");
+    el.className = "kartu";
+    el.innerHTML = '<img src="' + p.gambar + '" alt="' + p.nama + '" loading="lazy" onerror="if(!this.dataset.fallback){this.dataset.fallback=1;this.src=\'' + p.ext + '\';}">' +
+      '<div><h3>' + p.nama + '</h3><span style="font-size:.85rem;color:#64748B">' + p.kat + '</span><span class="hrg">' + rp(p.harga) +
+      '</span><button type="button" data-id="' + p.id + '">Tambah ke Keranjang</button></div>';
+    wadah.appendChild(el);
+  });
+  document.getElementById("kosong").hidden = hasil.length > 0;
+}
+
+function gambarKeranjang() {
+  var ul = document.getElementById("isi");
+  ul.innerHTML = "";
+  var total = 0, jumlah = 0, teks = "Halo Satria Teknik Bandung (STB), saya mau pesan:\n";
+  Object.keys(keranjang).forEach(function (id) {
+    var p = cari(Number(id)), qty = keranjang[id];
+    total += p.harga * qty; jumlah += qty;
+    teks += "- " + p.nama + " x" + qty + "\n";
+    var li = document.createElement("li");
+    li.style.padding = ".40rem 0";
+    li.style.borderBottom = "1px solid #E2E8F0";
+    li.textContent = p.nama + " x" + qty + " = " + rp(p.harga * qty);
+    var b = document.createElement("button");
+    b.type = "button"; b.textContent = "Hapus"; b.setAttribute("data-hapus", id);
+    li.appendChild(b); ul.appendChild(li);
+  });
+  if (!jumlah) ul.innerHTML = "<li style='color:#64748B;'>Keranjang masih kosong. Silakan pilih produk di atas.</li>";
+  document.getElementById("total").textContent = rp(total);
+  document.getElementById("jumlah").textContent = jumlah;
+  teks += "Total: " + rp(total);
+  document.getElementById("pesan").href = jumlah ? "https://wa.me/" + NOMOR_WA + "?text=" + encodeURIComponent(teks) : "#keranjang";
+}
+
+document.getElementById("cari").addEventListener("input", tampilkan);
+document.getElementById("kat").addEventListener("change", tampilkan);
+document.getElementById("daftar").addEventListener("click", function (e) {
+  var id = e.target.getAttribute("data-id");
+  if (!id) return;
+  keranjang[id] = (keranjang[id] || 0) + 1;
+  gambarKeranjang();
+  document.getElementById("info").textContent = cari(Number(id)).nama + " ditambahkan ke keranjang.";
+});
+document.getElementById("isi").addEventListener("click", function (e) {
+  var id = e.target.getAttribute("data-hapus");
+  if (!id) return;
+  delete keranjang[id]; gambarKeranjang();
+});
+document.getElementById("kosongkan").addEventListener("click", function () {
+  keranjang = {}; gambarKeranjang();
+  document.getElementById("info").textContent = "Keranjang dikosongkan.";
+});
+document.getElementById("pesan").addEventListener("click", function (e) {
+  if (this.getAttribute("href") === "#keranjang") {
+    e.preventDefault();
+    document.getElementById("info").textContent = "Silakan tambahkan minimal satu produk ke keranjang terlebih dahulu.";
+  }
+});
+
+tampilkan();
+gambarKeranjang();
+</script>
+</body>
+</html>
